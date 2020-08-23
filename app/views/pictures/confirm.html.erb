@@ -2,7 +2,8 @@
 
 <%= form_with(model: @picture, url: pictures_path, local: true) do |form| %>
   <%= form.hidden_field :content %>
-  <p>本文:<%= @picture.content %></p><br>
+  <p>タイトル:<%= @picture.title %></p><br>
+  <p>投稿内容:<%= @picture.content %></p><br>
 
   <%= form.submit "登録" %>
   <%= form.submit "戻る", name: 'back' %>
