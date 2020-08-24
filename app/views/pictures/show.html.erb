@@ -2,12 +2,11 @@
 <%= @user.name %>
 <p>タイトル: <%= @picture.title %></p>
 <p>投稿内容: <%= @picture.content %></p>
-<%= link_to "一覧画面にもどる", pictures_path %>
 
 <p id="notice"><%= notice %></p>
 <p>
   <strong>Image:</strong>
   <%= image_tag @picture.image.url %>
 </p>
-<%= link_to 'Edit', edit_picture_path(@picture) %> |
-<%= link_to 'Back', pictures_path %>
+
+<%= link_to '戻る', pictures_path %>
