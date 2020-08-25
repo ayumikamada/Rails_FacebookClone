@@ -14,15 +14,12 @@
       <%= form.label :title, 'タイトル' %><br>
       <%= form.text_field :title %>
     </div><br>
-
     <div class="picture_content">
       <%= form.label :content, '投稿内容' %><br>
       <%= form.text_field :content %>
     </div><br>
-
     <div class="field">
       <%= form.label :image %>
-      
       <%= form.file_field :image %>
       <%= form.hidden_field :image_cache %><br><br>
     </div>
