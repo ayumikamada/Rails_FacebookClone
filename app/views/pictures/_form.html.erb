@@ -10,25 +10,23 @@
     </div>
   <% end %>
 
-  <div class="picture_title">
-    <%= form.label :title, 'タイトル' %><br>
-    <%= form.text_field :title %>
-  </div><br>
+    <div class="picture_title">
+      <%= form.label :title, 'タイトル' %><br>
+      <%= form.text_field :title %>
+    </div><br>
 
-  <div class="picture_content">
-    <%= form.label :content, '投稿内容' %><br>
-    <%= form.text_field :content %>
-  </div><br>
+    <div class="picture_content">
+      <%= form.label :content, '投稿内容' %><br>
+      <%= form.text_field :content %>
+    </div><br>
 
-  <div class="field">
-  <%= form.label :image %>
-  <%= image_tag(@oicture.image.url) if @picture.image && @picture.image.url %>
-  <%= form.file_field :image %>
-  <%= form.hidden_field :image_cache %>
-  </div>
-</div>
+    <div class="field">
+      <%= form.label :image %>
+      
+      <%= form.file_field :image %>
+      <%= form.hidden_field :image_cache %><br><br>
+    </div>
 
-  <%= form.submit '投稿'%>
+<%= form.submit '投稿', class: 'btn btn-default' %>
+<%= link_to "戻る", pictures_path, class: 'btn btn-default' %>
 <% end %>
-<br><br>
-<%= link_to "一覧画面にもどる", pictures_path %>

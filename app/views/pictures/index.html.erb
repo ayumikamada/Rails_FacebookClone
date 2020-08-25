@@ -1,12 +1,13 @@
-<h2>投稿一覧</h2>
+<h4>投稿一覧</h4>
 
-<p><%= notice %></p>
-<table>
-  <tr>
-    <th>タイトル</th>
-    <th>内容</th>
-  </tr>
-  <% @pictures.each do |picture| %>   
+
+<div class="container">
+  <table class="table">
+    <tr>
+      <th>タイトル</th>
+      <th>内容</th>
+    </tr>
+    <% @pictures.each do |picture| %>   
     <tr> 
       <td><%= picture.title %></td><br>
       <td><%= picture.content %></td><br>
@@ -16,5 +17,6 @@
     </tr>
   <% end %>
 </table>
+</div>
 <br>
-<%= link_to '新しく投稿する', new_picture_path %>
+<%= link_to '新しく投稿する', new_picture_path, class: 'btn btn-default' %>

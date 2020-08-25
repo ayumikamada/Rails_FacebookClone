@@ -1,4 +1,4 @@
-<h3>以下の内容で、送信する。</h3>
+<h4>以下の内容で、送信する。</h4>
 
 <%= form_with(model: @picture, url: pictures_path, local: true) do |form| %>
   <%= form.hidden_field :title %>
@@ -6,10 +6,10 @@
   <p>タイトル:<%= @picture.title %></p><br>
   <p>投稿内容:<%= @picture.content %></p><br>
   <%= image_tag(@picture.image.url) if @picture.image && @picture.image.url %>
-  <%= form.hidden_field :image_cache %>
-  <%= form.submit "登録" %>
+  <%= form.hidden_field :image_cache %><br><br>
+  <%= form.submit "登録", class: 'btn btn-default' %>
 <% end %>
 <%= form_with(model:@picture, url:new_picture_path, local:true, method:"get") do |form| %>
   <%= form.hidden_field :image_cache %>
-  <%= form.submit "戻る", name: 'back' %>
+  <%= form.submit "戻る", name: 'back', class: 'btn btn-default' %>
 <% end %>

@@ -1,12 +1,14 @@
-<h1>投稿詳細</h1>
+<h4>投稿詳細</h4>
+<br><br>
 <%= @user.name %>
+<br><br>
 <p>タイトル: <%= @picture.title %></p>
 <p>投稿内容: <%= @picture.content %></p>
-
+<br><br>
 <p id="notice"><%= notice %></p>
 <p>
   <strong>Image:</strong>
   <%= image_tag @picture.image.url %>
-</p>
-
-<%= link_to '戻る', pictures_path %>
+</p><br>
+<%= link_to '編集', edit_picture_path(@picture), class: 'btn btn-default' %> 
+<%= link_to '戻る', pictures_path, class: 'btn btn-default' %>

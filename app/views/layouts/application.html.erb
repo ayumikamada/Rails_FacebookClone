@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RailsKaohonApp</title>
+    <title>FaceApp</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,9 +11,11 @@
   </head>
 
   <body>
+    <br><br>
     <% flash.each do |key, value| %>
       <%= content_tag(:div, value, class: "#{key}") %>
     <% end %>
+    <br>
     <% if logged_in? %>
       <%= link_to "Profile", user_path(current_user.id) %>
       <%= link_to "Logout", session_path(current_user.id), method: :delete %>
@@ -21,6 +23,19 @@
     　<%= link_to "Sign up", new_user_path %>
       <%= link_to "Login", new_session_path %>
     <% end %>
-    <%= yield %>
+
+    <div class="container">
+      <header>
+        <h2 class="title">Face App</h2>
+      </header>
+      <br><br>
+
+      <main>
+      <%= yield %>
+      </main>
+
+      <footer>
+      </footer>
+    </div>
   </body>
 </html>
