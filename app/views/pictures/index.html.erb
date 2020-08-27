@@ -5,15 +5,17 @@
     <tr>
       <th>タイトル</th>
       <th>内容</th>
+      <th>画像</th>
     </tr>
     <% @pictures.each do |picture| %>   
     <tr> 
-      <td><%= picture.title %></td><br>
-      <td><%= picture.content %></td><br>
+      <td><%= picture.title %></td>
+      <td><%= picture.content %></td>
+      <td><%= image_tag picture.image.to_s, size: '100x100' %></td>
       <td><%= link_to '詳細', picture_path(picture.id) %></td>
       <td><%= link_to "編集", edit_picture_path(picture.id), data: { confirm: '本当に編集していいですか？' } %></td>
-      <td><%= link_to '削除', picture_path(picture.id), method: :delete, data: { confirm: '本当に削除していいですか？' } %></td><br>
-    </tr>
+      <td><%= link_to '削除', picture_path(picture.id), method: :delete, data: { confirm: '本当に削除していいですか？' } %></td>
+      </tr>
     <% end %>
   </table>
 </div>

@@ -35,6 +35,7 @@ class PicturesController < ApplicationController
   def edit
   end
   def update
+    @picture.user_id = current_user.id
     if @picture.update(picture_params)
       redirect_to pictures_path, notice: "編集完了！"
     else
