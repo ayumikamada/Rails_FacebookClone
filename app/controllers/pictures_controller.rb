@@ -1,5 +1,6 @@
 class PicturesController < ApplicationController
   before_action :set_picture, only: [:show, :edit, :update, :destroy]
+  before_action :login_check, only: [:new, :edit, :destroy ]
 
   def index
     @pictures = Picture.all.order(created_at: :desc)
@@ -30,7 +31,7 @@ class PicturesController < ApplicationController
     end
   end
   def show
-    @user = User.find_by(id: @picture.user_id)
+   # @user = User.find_by(id: @picture.user_id)
   end
   def edit
   end
@@ -53,6 +54,11 @@ class PicturesController < ApplicationController
   end
   def set_picture
     @picture = Picture.find(params[:id])
+  end
+  def login_check
+    unless logged_in?
+      redirect_to sessions_path
+    end
   end
  
 end
