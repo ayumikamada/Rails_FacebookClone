@@ -31,7 +31,6 @@ class PicturesController < ApplicationController
     end
   end
   def show
-   # @user = User.find_by(id: @picture.user_id)
   end
   def edit
   end

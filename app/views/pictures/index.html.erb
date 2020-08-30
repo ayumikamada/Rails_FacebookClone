@@ -3,12 +3,14 @@
 <div class="container">
   <table class="table">
     <tr>
+      <th>投稿者</th>
       <th>タイトル</th>
       <th>内容</th>
       <th>画像</th>
     </tr>
     <% @pictures.each do |picture| %>   
     <tr> 
+      <td><%= picture.user.name %></td>
       <td><%= picture.title %></td>
       <td><%= picture.content %></td>
       <td><%= image_tag picture.image.to_s, size: '100x100' %></td>
